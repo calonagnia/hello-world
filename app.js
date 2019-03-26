@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const fs = require('fs');
+var path = require('path');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
@@ -18,12 +20,17 @@ app.use((req,res,next)=>{
         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
         return res.status(200).json({});
     }
+    
     next();
 });
 
 //Route which should handle requests
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+
+app.get('/', function(req, res){
+   res.sendFile('index.html', {root: path.join(__dirname, './render-html')}); 
+});
 
 app.use((req,res,next)=>{
     const error = new Error('Not found');
