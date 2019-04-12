@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/cssFiles/bootstrap-4.0.0-dist/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="/cssFiles/bootstrap-4.0.0-dist/css/bootstrap.css" >
+        <link rel="stylesheet" href="/cssFiles/bootstrap-4.0.0-dist/css/bootstrap-datetimepicker.css" >
+    </head>
+    <body>
+        <!--
+        <form action="uploadImage" method="POST" enctype="multipart/form-data">
+            File:
+            <input type="file" name="image">
+            <input type="submit" value="upload">
+        </form>
+        <form action="/member" method="POST">
+            Nama: <input type="text" name="name">
+            Status : <input type="text" name="status">
+            No Tlp : <input type="text" name="notlp">
+            Pekerjaan: <input type="text"  name="pekerjaan">
+            <input type="submit" value="upload">
+        </form>-->
+        <div class="container">
+            <h1 class="text-center" style="margin-top: 20px; margin-bottom: 20px">Form Database</h1>
+            <form action="/member" method="POST">
+                <div class="form-group row" >
+                  <label for="memberName" class="col-sm-2 col-form-label">Nama</label>
+                  <div class="col-sm-8"><input type="text" class="form-control" id="memberName" name="name" aria-describedby="emailHelp" placeholder="Masukkan Nama"></div>
+                  <small id="emailHelp" class="form-text text-muted">masukkan nama lengkap</small>
+                </div>
+                <div class="form-group row" >
+                  <label for="memberNickName" class="col-sm-2 col-form-label">Nama Panggilan</label>
+                  <div class="col-sm-8"><input type="text" class="form-control" id="memberNickName" name="nickName" aria-describedby="nickName" placeholder="Nama Panggilan"></div>
+                </div>
+                <div class="form-group row" >
+                  <label for="tempatlahir" class="col-sm-2 col-form-label">Tempat Lahir</label>
+                  <div class="col-sm-4"><input type="text" class="form-control" id="tempatlahir" name="tempatlahir" aria-describedby="tempatlahir" placeholder="tempatlahir"></div>
+                  <div class="input-append date form_datetime col-sm-6 row">
+                    <label for="tanggallahir" class="col-sm-3 col-form-label">Tanggal Lahir</label>
+                    <div class="col-sm-9"><input type="text" class="form-control" id="tanggallahir" name="tanggallahir" aria-describedby="tanggallahir" placeholder="tanggallahir">
+                        <span class="add-on"><i class="icon-th"></i></span>  
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Status</label>
+                    <div class="col-sm-8"><select class="form-control" id="exampleFormControlSelect1" name="status">
+                      <option>Lajang</option>
+                      <option>Menikah</option>
+                      <option>Duda</option>
+                      <option>Janda</option>
+                    </select></div>
+                  </div>
+                <div class="form-group row">
+                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Jenis Kelamin</label>
+                    <div class="col-sm-8"><select class="form-control" id="exampleFormControlSelect1" name="jk">
+                      <option>Laki-laki</option>
+                      <option>Perempuan</option>
+                        </select></div>
+                  </div>
+                <div class="form-group row" >
+                  <label for="tlp" class="col-sm-2 col-form-label">No Tlp/Hp</label>
+                  <div class="col-sm-8"><input type="text" class="form-control" id="tlp" name="notlp" aria-describedby="emailHelp" placeholder="Enter email"></div>
+                </div>
+                <div class="form-group row" >
+                  <label for="pekerjaan" class="col-sm-2 col-form-label">Pekerjaan</label>
+                  <div class="col-sm-8"><input type="text" class="form-control" id="pekerjaan" name="pekerjaan" aria-describedby="emailHelp" placeholder="Enter email"></div>
+                </div>
+                <div class="form-group row" >
+                  <label for="Email" class="col-sm-2 col-form-label">Email address</label>
+                  <div class="col-sm-8"><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></div>
+                </div>
+                <!--
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                --->
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+        <script src="/cssFiles/bootstrap-4.0.0-dist/jquery-3.3.1.min.js"></script>
+        <script src="/cssFiles/bootstrap-4.0.0-dist/js/bootstrap.min.js" />
+        
+        <script src="/cssFiles/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="./cssFiles/bootstrap-4.0.0-dist/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+        <script src="/cssFiles/bootstrap-4.0.0-dist/popper.min.js"></script>
+        <script type="text/javascript">
+            $(".form_datetime").datetimepicker({
+                format: 'dd/mm/yyyy',
+                 autoclose: true,
+                todayBtn: true,
+                minView: 2,
+                startView: 2
+            }); 
+        </script> 
+    </body>
+</html>
